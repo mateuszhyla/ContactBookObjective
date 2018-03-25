@@ -1,13 +1,12 @@
 #include <iostream>
-#include "contactBook.h"
+#include "contactsBook.h"
 
 using namespace std;
 
 int main()
 {
-    char selection;
-    ContactBook myContactBook;
+    ContactsBook myContactsBook;
 
-    selection = myContactBook.displayMainMenu();
+    myContactsBook.manageContactBook();
     return 0;
 }

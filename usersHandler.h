@@ -5,15 +5,16 @@
 
 using namespace std;
 
-class UserHandler
+class UsersHandler
 {
 
     public:
 
     vector <User> existingUsers;
     FileUsers fileHandler;
-    UserHandler ();
+    UsersHandler ();
     void registerNewUser();
-    void logIn ();
+    User logIn ();
+    void changePassword (User);
 
 };

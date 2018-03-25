@@ -34,10 +34,12 @@
 		</Compiler>
 		<Unit filename="contact.cpp" />
 		<Unit filename="contact.h" />
-		<Unit filename="contactBook1.cpp" />
-		<Unit filename="contactBook1.h" />
+		<Unit filename="contactBook.cpp" />
+		<Unit filename="contactBook.h" />
 		<Unit filename="contactsHandler.cpp" />
 		<Unit filename="contactsHandler.h" />
+		<Unit filename="converters.cpp" />
+		<Unit filename="converters.h" />
 		<Unit filename="fileContacts.cpp" />
 		<Unit filename="fileContacts.h" />
 		<Unit filename="fileUsers.cpp" />

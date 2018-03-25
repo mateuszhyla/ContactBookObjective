@@ -1,19 +1,19 @@
 #include <iostream>
 #include <stdlib.h>
 #include <windows.h>
-#include "userHandler.h"
+#include "usersHandler.h"
 
 
 using namespace std;
 
-UserHandler::UserHandler()
+UsersHandler::UsersHandler()
 {
     existingUsers = fileHandler.readUsersDataFromFile();
 }
 
-void UserHandler::registerNewUser()
+void UsersHandler::registerNewUser()
 {
-
+    existingUsers = fileHandler.readUsersDataFromFile();
     string nickName, password;
     User newUser;
     int i = 0, contactId = 1;
@@ -47,10 +47,69 @@ void UserHandler::registerNewUser()
     newUser.setNickname (nickName);
     newUser.setPassword (password);
 
-    existingUsers.push_back(newUser);
     fileHandler.updateUsersDataBase(newUser, "add");
 
     cout << endl << "User's account has been created!" << endl;
     Sleep(1500);
 }
-   // void logIn ();
+User UsersHandler::logIn ()
+{
+    existingUsers = fileHandler.readUsersDataFromFile();
+    string nickName, password;
+    User matchedUser;
+    matchedUser.setId(0);
+    system("cls");
+    cout << "Write your username: ";
+    cin >> nickName;
+    int i = 0;
+
+    while (i < existingUsers.size())
+    {
+        if (existingUsers[i].getNickname() == nickName)
+        {
+            for (int attempts = 0; attempts < 3; attempts++)
+            {
+                cout << "Write your password. Login attempts remaining: " << 3-attempts << ": ";
+                cin >> password;
+                if (existingUsers[i].getPassword() == password)
+                {
+                    matchedUser = existingUsers[i];
+                    cout << "Logged in correctly!";
+                    Sleep(1000);
+                    return existingUsers[i];
+                }
+            }
+            cout << "3 logon attempts failed. Please wait 5 seconds until next try" << endl;
+            Sleep(5000);
+            return matchedUser;
+        }
+        i++;
+    }
+    cout << "There is no such username in database. Check your credentials" << endl;
+    Sleep(1500);
+    return matchedUser;
+
+}
+
+void UsersHandler::changePassword (User loggedUser)
+{
+    string oldPassword, newPassword;
+    system ("cls");
+    cout << "Type old password: ";
+
+    cin >> oldPassword;
+    while (oldPassword != loggedUser.getPassword())
+    {
+        system("cls");
+        cout << "Password is incorrect. Please type again: ";
+        cin >> oldPassword;
+    }
+    cout << endl << "Type new password: ";
+    cin >> newPassword;
+
+    loggedUser.setPassword(newPassword);
+    fileHandler.updateUsersDataBase(loggedUser, "update");
+    cout << endl << "New password has been set" << endl;
+    Sleep(1500);
+}
+

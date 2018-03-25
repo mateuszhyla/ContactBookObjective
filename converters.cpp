@@ -5,5 +5,5 @@ using namespace std;
 
 string Converters::convertIntToString (int id)
 {
-
+	return "";
 };

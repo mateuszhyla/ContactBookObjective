@@ -1,11 +1,26 @@
 # depslib dependency file v1.0
-1521564793 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contact.cpp
+1521972051 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contact.cpp
+	<iostream>
+	"contact.h"
 
-1521564793 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactshandler.cpp
+1521981140 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactshandler.cpp
+	<iostream>
+	<stdlib.h>
+	<windows.h>
+	"contactsHandler.h"
+	<algorithm>
+	<conio.h>
+	<sstream>
 
-1521564793 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\filecontacts.cpp
+1521976121 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\filecontacts.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<cstdlib>
+	"fileContacts.h"
+	<sstream>
 
-1521652900 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\fileusers.cpp
+1521673023 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\fileusers.cpp
 	<iostream>
 	<vector>
 	<fstream>
@@ -13,21 +28,21 @@
 	"fileUsers.h"
 	<sstream>
 
-1521666465 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\main.cpp
+1521871715 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\main.cpp
 	<iostream>
-	"contactBook.h"
+	"contactsBook.h"
 
-1521667845 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\user.cpp
+1521673023 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\user.cpp
 	<iostream>
 	"user.h"
 
-1521667628 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\usershandler.cpp
+1521981745 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\usershandler.cpp
 	<iostream>
 	<stdlib.h>
 	<windows.h>
-	"userHandler.h"
+	"usersHandler.h"
 
-1521668157 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\user.h
+1521673023 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\user.h
 	<iostream>
 
 1521666445 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactbook.cpp
@@ -38,13 +53,13 @@
 	<windows.h>
 	"contactBook.h"
 
-1521667830 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\fileusers.h
+1521673023 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\fileusers.h
 	<iostream>
 	<vector>
 	"user.h"
 	"converters.h"
 
-1521652100 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\converters.h
+1521962816 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\converters.h
 	<iostream>
 
 1521666369 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactbook.h
@@ -57,7 +72,45 @@
 	"user.h"
 	"fileUsers.h"
 
-1521668477 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\converters.cpp
+1521726907 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\converters.cpp
 	<iostream>
+	"converters.h"
+
+1521972031 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contact.h
+	<iostream>
+
+1521983114 source:c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactsbook.cpp
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+	<conio.h>
+	<windows.h>
+	"contactsBook.h"
+	"contact.h"
+
+1521977440 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactsbook.h
+	<iostream>
+	<vector>
+	"usersHandler.h"
+	"contactsHandler.h"
+
+1521979882 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\usershandler.h
+	<iostream>
+	<vector>
+	"user.h"
+	"fileUsers.h"
+
+1521983553 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\contactshandler.h
+	<iostream>
+	<vector>
+	"contact.h"
+	"fileContacts.h"
+	"converters.h"
+
+1521975927 c:\users\mateusz\desktop\programowanie\obiektowe\contactbook\filecontacts.h
+	<iostream>
+	<vector>
+	"contact.h"
 	"converters.h"
 
