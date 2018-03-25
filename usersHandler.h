@@ -8,13 +8,14 @@ using namespace std;
 class UsersHandler
 {
 
-    public:
+private:
 
     vector <User> existingUsers;
     FileUsers fileHandler;
-    UsersHandler ();
+
+public:
     void registerNewUser();
     User logIn ();
     void changePassword (User);
-
+    UsersHandler ();
 };

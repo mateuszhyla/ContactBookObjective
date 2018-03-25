@@ -7,25 +7,21 @@
 #include <sstream>
 using namespace std;
 
-void ContactsHandler::updateContactsVector(int userId)
+void ContactsHandler::updateContactsVector(int userId, int &newContactId)
 {
-    existingContacts = fileHandler.readContactsDataFromFile(userId);
+    existingContacts = fileHandler.readContactsDataFromFile(userId, newContactId);
 }
 
 void ContactsHandler::addContactToContactsBook(int userId)
 {
-    updateContactsVector(userId);
+    updateContactsVector(userId, newContactId);
     Contact newContact;
     string tempInfo;
     system("cls");
-    int contactId = 1;
-    if (existingContacts.size() != 0)
-    {
-    contactId = existingContacts.back().getContactId();
-    }
+
     cout << "Fill contact informations:" << endl << endl;
 
-    newContact.setContactId (contactId + 1);
+    newContact.setContactId (newContactId);
     newContact.setUserId(userId);
 
     cout << "Name: ";
@@ -58,7 +54,7 @@ void ContactsHandler::addContactToContactsBook(int userId)
 
 void ContactsHandler::showAllContacts(int userId)
 {
-    updateContactsVector(userId);
+    updateContactsVector(userId, newContactId);
     string userSelection;
     vector <string> availableIDs;
     availableIDs.push_back("0");
@@ -104,9 +100,9 @@ void ContactsHandler::modifyContact (int contactId, int userId)
 
             cout << "Old name: " << existingContacts[i].getName() << endl << "New name: ";
             cin >> tempInfo;
-newContact.setName(tempInfo);
+            newContact.setName(tempInfo);
             cout << "Old surname: " << existingContacts[i].getSurname() << endl << "New surname: ";
-             cin >> tempInfo;
+            cin >> tempInfo;
             newContact.setSurname(tempInfo);
 
             cout << "Old phone number: " << existingContacts[i].getPhoneNumber() << endl << "New phone number: ";
@@ -115,7 +111,7 @@ newContact.setName(tempInfo);
             newContact.setPhoneNumber(tempInfo);
 
             cout << "Old email: " << existingContacts[i].getEmail() << endl << "New email address: ";
-                         cin >> tempInfo;
+            cin >> tempInfo;
             newContact.setEmail(tempInfo);
 
             cout << "Old address: " << existingContacts[i].getAddress() << endl << "New address: ";
@@ -164,7 +160,7 @@ void ContactsHandler::removeContact (int id)
 
 void ContactsHandler::searchByName(int userId)
 {
-    updateContactsVector(userId);
+    updateContactsVector(userId, newContactId);
     string searchedName;
     string userSelection;
     bool matchesFound = false;
@@ -208,7 +204,7 @@ void ContactsHandler::searchByName(int userId)
 
 void ContactsHandler::searchBySurname(int userId)
 {
-    updateContactsVector(userId);
+    updateContactsVector(userId, newContactId);
     string searchedSurname;
     string userSelection;
     bool matchesFound = false;

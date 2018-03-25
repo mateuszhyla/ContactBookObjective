@@ -10,7 +10,7 @@ class FileContacts : public Converters
 
     public:
 
-    vector <Contact> readContactsDataFromFile(int);
+    vector <Contact> readContactsDataFromFile(int, int&);
     void updateContactsDataBase(Contact, string);
 
     private:

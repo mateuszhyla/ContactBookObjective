@@ -8,7 +8,7 @@
 
 using namespace std;
 
-vector <Contact> FileContacts::readContactsDataFromFile(int userId)
+vector <Contact> FileContacts::readContactsDataFromFile(int userId, int &newContactId)
 {
     fstream contactBook;
     contactBook.open("contactBook.txt", ios::in);
@@ -16,7 +16,7 @@ vector <Contact> FileContacts::readContactsDataFromFile(int userId)
     vector <Contact> allContacts;
     Contact contactInfo;
     string contact;
-    int contactId = 1;
+
 
     while (getline(contactBook, contact))
     {
@@ -35,7 +35,7 @@ vector <Contact> FileContacts::readContactsDataFromFile(int userId)
         contactInfo.setPhoneNumber (dividedContact[4]);
         contactInfo.setEmail (dividedContact[5]);
         contactInfo.setAddress(dividedContact[6]);
-        contactId = contactInfo.getContactId() + 1;
+        newContactId = contactInfo.getContactId() + 1;
         if (contactInfo.getUserId() == userId)
         {
             allContacts.push_back(contactInfo);

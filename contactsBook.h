@@ -9,16 +9,15 @@ class ContactsBook
 {
 
 public:
-	char mainMenuUserSelection;
+	void manageContactBook();
+
+private:
+    char mainMenuUserSelection;
 	char contactsMenuUserSelection;
 	char searchMenuUserSelection;
 	UsersHandler userHandler;
 	ContactsHandler contactHandler;
 	User loggedUser;
-
-	void manageContactBook();
-
-private:
 	char displayMainMenu();
 	char displayContactsMenu();
 	char manageContactsMenu();

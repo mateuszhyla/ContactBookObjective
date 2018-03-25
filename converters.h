@@ -4,9 +4,7 @@ using namespace std;
 
 class Converters
 {
-
-    public:
+    private:
 
     virtual string convertIntToString (int);
-
 };
